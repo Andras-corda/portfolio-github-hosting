@@ -1,0 +1,15 @@
+.readme-section h1, .readme-section h2, .readme-section h3 {
+  margin-top: 1em;
+}
+
+.readme-section p {
+  line-height: 1.6;
+}
+
+.readme-section ul {
+  padding-left: 1.5em;
+}
+
+.readme-section li {
+  margin-bottom: 0.5em;
+}
