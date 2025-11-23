@@ -1,0 +1,79 @@
+{
+  "projects": [
+    {
+      "title": "Yukais quest for cureness",
+      "status": "Public",
+      "description": "My first game created using Unity 2022.3.9F1. It was my final project for my CESS diploma at Asty-moulin.",
+      "technologies": [{ "name": "CSharp", "class": "csharp" }],
+      "stats": { "stars": 7, "branches": 3 },
+      "links": {
+        "info": "https://www.asty-moulin.be/informatique#programme",
+        "github": "https://github.com/VintagixDev/UAA13-YukaisQuestForCureness"
+      },
+      "icon": "fas fa-folder"
+    },
+    {
+      "title": "Portfolio",
+      "status": "Public",
+      "description": "This portfolio website template is available on GitHub upon request.",
+      "technologies": [
+        { "name": "HTML", "class": "html" },
+        { "name": "CSS", "class": "css" },
+        { "name": "JavaScript", "class": "js" }
+      ],
+      "stats": { "stars": 3, "branches": 0 },
+      "links": {
+        "demo": "https://github.com/Andras-corda/portfolio",
+        "github": "https://github.com/Andras-corda/portfolio"
+      },
+      "icon": "fas fa-folder"
+    },
+    {
+      "title": "CTOS",
+      "status": "Public",
+      "description": "End-of-year project for my Multimedia class at Asty-moulin.",
+      "technologies": [
+        { "name": "PHP", "class": "php" },
+        { "name": "CSS", "class": "css" },
+        { "name": "JavaScript", "class": "js" },
+        { "name": "MySQL", "class": "mysql" },
+        { "name": "JSON", "class": "json" }
+      ],
+      "stats": { "stars": 6, "branches": 0 },
+      "links": {
+        "info": "https://www.asty-moulin.be/informatique#programme",
+        "github": "https://github.com/R3tr0-andras/ctOS"
+      },
+      "icon": "fas fa-folder"
+    },
+    {
+      "title": "DIM3NSI0N",
+      "status": "Privé",
+      "description": "2D video game in Unity with specifications and a roadmap. (Currently in development at the time of the site's creation)",
+      "technologies": [
+        { "name": "Unity", "class": "unity" },
+        { "name": "CSharp", "class": "csharp" }
+      ],
+      "stats": { "stars": 18, "branches": 3 },
+      "links": {
+        "doc": "https://docs.google.com/document/d/1SH9q7UJbMkfDXmbHWPMfPyaw5rgaahBnz0xNbuD_j8w/edit?usp=sharing",
+        "github": "https://github.com/Andras-corda/DIM3NSION"
+      },
+      "icon": "fas fa-folder"
+    },
+    {
+      "title": "Ink machine",
+      "status": "Privé",
+      "description": "A mod for the game Minecraft made in Java and published on Curseforge. (Currently in development at the time of the site's creation)",
+      "technologies": [
+        { "name": "Java", "class": "java" },
+        { "name": "JSON", "class": "json" }
+      ],
+      "stats": { "downloads": 1331 },
+      "links": {
+        "curseforge": "https://www.curseforge.com/minecraft/mc-mods/ink-machine"
+      },
+      "icon": "fas fa-folder"
+    }
+  ]
+}
