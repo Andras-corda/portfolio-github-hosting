@@ -1,0 +1,66 @@
+{
+    "owner": {
+        "username": "@R3tr0___",
+        "name": "Andras",
+        "role": "Full-Stack Developer & Multimedia Software",
+        "tagline": "Full Stack Developer passionate about creating web applications, software, and video games. (I also love cats.)",
+        "location": {
+            "city": "Namur",
+            "country": "Belgium"
+        },
+        "status": "Unpaid and tired developer (send help)",
+        "availability": "Mon - Thu, 9h - 18h"
+    },
+
+    "contact": {
+        "email": "andrascorda.switch@gmail.com",
+        "emailCompose": "https://mail.google.com/mail/?view=cm&fs=1&to=andrascorda.switch@gmail.com",
+        "discord": "https://discord.com/users/411170239607472128"
+    },
+
+    "links": {
+        "github": "https://github.com/Andras-corda",
+        "portfolio": "https://andras-corda.github.io/portfolio-github-hosting/",
+        "portfolioRepository": "https://github.com/Andras-corda/portfolio-github-hosting",
+        "codex": "https://andras-corda.github.io/Codex-devlopment/",
+        "curseforge": "https://www.curseforge.com/minecraft/mc-mods/ink-machine",
+        "school": "https://www.asty-moulin.be/informatique#programme"
+    },
+
+    "github": {
+        "user": "Andras-corda",
+        "api": {
+            "user": "https://api.github.com/users/Andras-corda",
+            "repos": "https://api.github.com/users/Andras-corda/repos?per_page=100&sort=pushed",
+            "contributions": "https://github-contributions-api.jogruber.de/v4/Andras-corda?y=last"
+        },
+        "cacheDurationMinutes": 60
+    },
+
+    "site": {
+        "title": "Home page",
+        "lang": "fr",
+        "favicon": "./asset/picture/icon-aseprite.png",
+        "profilePicture": "https://github.com/Andras-corda.png",
+        "heroBackground": null,
+        "themes": ["light", "dark", "system"],
+        "defaultTheme": "system",
+        "font": "Hahmlet",
+        "footer": "© 2025 Portfolio. Designed with ♥ and lots of coffee",
+        "map": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d162492.46675473676!2d4.858418857498627!3d50.479371471599976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sbe!4v1765901038385!5m2!1sfr!2sbe"
+    },
+
+    "navigation": [
+        { "label": "Accueil", "anchor": "#accueil" },
+        { "label": "À propos", "anchor": "#apropos" },
+        { "label": "Compétences", "anchor": "#competences" },
+        { "label": "Projets", "anchor": "#projets" },
+        { "label": "Contact", "anchor": "#contact" }
+    ],
+
+    "projectCategories": [
+        { "id": "school-projects-exams", "label": "School projects & exams", "icon": "fas fa-school" },
+        { "id": "game-jams-side-projects", "label": "Game jams & side projects", "icon": "fas fa-gamepad" },
+        { "id": "modding", "label": "Modding", "icon": "fas fa-puzzle-piece" }
+    ]
+}

@@ -1,0 +1,110 @@
+{
+    "snapshot": "2026-10-10",
+    "note": "Valeurs de secours affichées si l'API GitHub est indisponible. Regénérer avec le script de build.",
+    "projects": [
+        {
+            "title": "Yukais quest for cureness",
+            "category": "school-projects-exams",
+            "repo": "VintagixDev/UAA13-YukaisQuestForCureness",
+            "url": "https://github.com/VintagixDev/UAA13-YukaisQuestForCureness",
+            "image": "./asset/picture/projects/uaa13-yukaisquestforcureness.png",
+            "stars": 3,
+            "forks": 0,
+            "updated": "2025-07-05T20:34:12Z",
+            "language": "C#",
+            "archived": false,
+            "homepage": null
+        },
+        {
+            "title": "CTOS",
+            "category": "school-projects-exams",
+            "repo": "R3tr0-andras/ctOS",
+            "url": "https://github.com/R3tr0-andras/ctOS",
+            "image": "./asset/picture/projects/ctos.png",
+            "stars": 0,
+            "forks": 0,
+            "updated": "2024-06-03T09:34:17Z",
+            "language": "PHP",
+            "archived": false,
+            "homepage": null
+        },
+        {
+            "title": "BlenderHeaj",
+            "category": "school-projects-exams",
+            "repo": "Andras-corda/blenderHeajWeb",
+            "url": "https://github.com/Andras-corda/blenderHeajWeb",
+            "image": "./asset/picture/projects/blenderheajweb.png",
+            "stars": 0,
+            "forks": 0,
+            "updated": "2026-02-23T14:29:54Z",
+            "language": "PHP",
+            "archived": false,
+            "homepage": null
+        },
+        {
+            "title": "Watch Dogs gameplay prototype",
+            "category": "game-jams-side-projects",
+            "repo": "Andras-corda/watch-dogs-gameplay-prototype",
+            "url": "https://github.com/Andras-corda/watch-dogs-gameplay-prototype",
+            "image": "./asset/picture/projects/watch-dogs-gameplay-prototype.png",
+            "stars": 0,
+            "forks": 0,
+            "updated": "2026-10-05T18:44:56Z",
+            "language": null,
+            "archived": false,
+            "homepage": null
+        },
+        {
+            "title": "Codex",
+            "category": "game-jams-side-projects",
+            "repo": "Andras-corda/Codex-devlopment",
+            "url": "https://github.com/Andras-corda/Codex-devlopment",
+            "image": "./asset/picture/projects/codex-devlopment.png",
+            "stars": 0,
+            "forks": 0,
+            "updated": "2026-10-04T13:00:21Z",
+            "language": "HTML",
+            "archived": false,
+            "homepage": "https://andras-corda.github.io/Codex-devlopment/"
+        },
+        {
+            "title": "Portfolio",
+            "category": "game-jams-side-projects",
+            "repo": "Andras-corda/portfolio-github-hosting",
+            "url": "https://github.com/Andras-corda/portfolio-github-hosting",
+            "image": "./asset/picture/projects/portfolio-github-hosting.png",
+            "stars": 0,
+            "forks": 0,
+            "updated": "2026-04-02T13:56:27Z",
+            "language": "HTML",
+            "archived": false,
+            "homepage": "https://andras-corda.github.io/portfolio-github-hosting/"
+        },
+        {
+            "title": "Ink machine",
+            "category": "modding",
+            "repo": "Andras-corda/ink-mod",
+            "url": "https://github.com/Andras-corda/ink-mod",
+            "image": "./asset/picture/projects/ink-mod.png",
+            "stars": 0,
+            "forks": 0,
+            "updated": "2026-09-22T18:12:07Z",
+            "language": "HTML",
+            "archived": false,
+            "homepage": null
+        },
+        {
+            "title": "Eagle Vision",
+            "category": "modding",
+            "repo": "Andras-corda/eagle-vision",
+            "url": "https://github.com/Andras-corda/eagle-vision",
+            "image": "./asset/picture/projects/eagle-vision.png",
+            "stars": 0,
+            "forks": 0,
+            "updated": "2026-04-02T13:52:01Z",
+            "language": "Java",
+            "archived": false,
+            "homepage": null
+        }
+    ]
+}

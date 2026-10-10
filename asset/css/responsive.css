@@ -186,3 +186,31 @@
         border: 0;
     }
 }
+/* Carrousels de projets */
+@media (max-width: 1024px) {
+    .carousel-track .project-card {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-track .project-card {
+        flex-basis: 85%;
+    }
+
+    .project-group-title {
+        font-size: 1.25rem;
+    }
+
+    .about-panels {
+        height: 360px;
+        padding: 16px;
+    }
+}
+
+/* Statistiques GitHub */
+@media (max-width: 768px) {
+    .gh-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

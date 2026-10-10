@@ -70,6 +70,9 @@
     <!-- main -->
     <!-- Section Accueil -->
     <section id="accueil" class="hero">
+        <!-- Fond animé (parallax souris) : changer l'image via --hero-bg-image dans sections.css -->
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-blur" aria-hidden="true"></div>
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
@@ -80,17 +83,18 @@
                     (I also love cats.)
                 </p>
                 <div class="hero-stats">
+                    <!-- Mis à jour automatiquement depuis GitHub (script.js) -->
                     <div class="stat-item">
                         <i class="fas fa-code"></i>
-                        <span>20+ projects</span>
+                        <span><span id="hero-repos">14</span> public repos</span>
                     </div>
                     <div class="stat-item">
-                        <i class="fas fa-star"></i>
-                        <span>100+ stars</span>
+                        <i class="fas fa-fire"></i>
+                        <span><span id="hero-contribs">100+</span> contributions this year</span>
                     </div>
                     <div class="stat-item">
                         <i class="fas fa-users"></i>
-                        <span>10 contributors</span>
+                        <span><span id="hero-followers">5</span> followers</span>
                     </div>
                 </div>
                 <div class="hero-buttons">
@@ -107,7 +111,7 @@
             <div class="hero-image">
                 <div class="profile-card">
                     <div class="profile-avatar">
-                        <img src="./asset/picture/NPP2025.png" alt="Photo de profil de @R3tr0___"
+                        <img src="https://github.com/Andras-corda.png" alt="Photo de profil GitHub de @R3tr0___"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <!-- Fallback si l'image ne charge pas -->
                         <div class="profile-avatar-fallback" style="display: none;">
@@ -116,7 +120,8 @@
                     </div>
                     <div class="profile-info">
                         <h3>@R3tr0___</h3>
-                        <p>Full-Stack Developer & Multimedia Software</p>
+                        <!-- Bio GitHub (mise à jour par script.js) -->
+                        <p id="profile-bio">I'm a developer passionate about creating web applications, software, and video games. (I also love cats.)</p>
                         <div class="profile-stats">
                             <span><i class="fas fa-map-marker-alt"></i> Namur, Belgium</span>
                             <span><i class="fas fa-building"></i> Unpaid and tired developer (send help)</span>
@@ -137,9 +142,29 @@
                 <p class="section-description">A little more about my background and qualifications</p>
             </div>
             <div class="about-content">
-                <div class="about-text">
-                    <div class="readme-section">
-                        <h3>README.md</h3>
+                <!-- Onglets -->
+                <div class="about-tabs" role="tablist">
+                    <button class="about-tab active" role="tab" aria-selected="true" aria-controls="tab-readme"
+                        id="tab-btn-readme">
+                        <i class="fab fa-markdown"></i> README.md
+                    </button>
+                    <button class="about-tab" role="tab" aria-selected="false" aria-controls="tab-degrees"
+                        id="tab-btn-degrees" tabindex="-1">
+                        <i class="fas fa-graduation-cap"></i> Degrees
+                    </button>
+                    <button class="about-tab" role="tab" aria-selected="false" aria-controls="tab-plan"
+                        id="tab-btn-plan" tabindex="-1">
+                        <i class="fas fa-map"></i> Plan
+                    </button>
+                    <button class="about-tab" role="tab" aria-selected="false" aria-controls="tab-contribution"
+                        id="tab-btn-contribution" tabindex="-1">
+                        <i class="fas fa-chart-simple"></i> Contribution
+                    </button>
+                </div>
+
+                <div class="about-panels">
+                    <!-- README.md -->
+                    <div class="about-panel active" role="tabpanel" id="tab-readme" aria-labelledby="tab-btn-readme">
                         <div class="code-block">
                             <pre>
                                 <code>
@@ -164,24 +189,91 @@ application creation. I enjoy solving complex problems and learning new technolo
                             </pre>
                         </div>
                     </div>
-                    <div class="contribution-graph">
-                        <h4>Contributions during the year</h4>
-                        <div class="graph-container">
-                            <div class="graph-weeks">
-                                <!-- Généré dynamiquement par JavaScript -->
+
+                    <!-- Degrees -->
+                    <div class="about-panel" role="tabpanel" id="tab-degrees" aria-labelledby="tab-btn-degrees" hidden>
+                        <ul class="timeline">
+                            <!-- TODO : compléter avec tes vrais diplômes -->
+                            <li class="timeline-item">
+                                <span class="timeline-date">2025 - now</span>
+                                <h4>Game Development</h4>
+                                <p>School name — description of the program.</p>
+                            </li>
+                            <li class="timeline-item">
+                                <span class="timeline-date">20XX - 2025</span>
+                                <h4>CESS — Informatique</h4>
+                                <p>Asty-Moulin, Namur.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Plan -->
+                    <div class="about-panel" role="tabpanel" id="tab-plan" aria-labelledby="tab-btn-plan" hidden>
+                        <ul class="plan-list">
+                            <!-- TODO : compléter avec tes vrais objectifs -->
+                            <li class="plan-item done">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Finish my CESS diploma</span>
+                            </li>
+                            <li class="plan-item in-progress">
+                                <i class="fas fa-spinner"></i>
+                                <span>Game Development studies</span>
+                            </li>
+                            <li class="plan-item">
+                                <i class="far fa-circle"></i>
+                                <span>Next goal...</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contribution -->
+                    <div class="about-panel" role="tabpanel" id="tab-contribution"
+                        aria-labelledby="tab-btn-contribution" hidden>
+                        <div class="gh-summary">
+                            <p><strong id="gh-total">…</strong> contributions in the last year</p>
+                            <a href="https://github.com/Andras-corda" target="_blank" rel="noopener" class="gh-profile-link">
+                                <i class="fab fa-github"></i> @Andras-corda
+                            </a>
+                        </div>
+
+                        <div class="contribution-graph">
+                            <div class="graph-container">
+                                <div class="graph-weeks" aria-label="GitHub contribution calendar">
+                                    <!-- Généré dynamiquement par JavaScript (données GitHub réelles) -->
+                                </div>
+                            </div>
+                            <div class="graph-legend">
+                                <span>Less</span>
+                                <div class="legend-squares">
+                                    <div class="square level-0"></div>
+                                    <div class="square level-1"></div>
+                                    <div class="square level-2"></div>
+                                    <div class="square level-3"></div>
+                                    <div class="square level-4"></div>
+                                </div>
+                                <span>More</span>
                             </div>
                         </div>
-                        <div class="graph-legend">
-                            <span>Less</span>
-                            <div class="legend-squares">
-                                <div class="square level-0"></div>
-                                <div class="square level-1"></div>
-                                <div class="square level-2"></div>
-                                <div class="square level-3"></div>
-                                <div class="square level-4"></div>
-                            </div>
-                            <span>More</span>
+
+                        <div class="gh-stats">
+                            <div class="gh-stat"><span id="gh-streak">–</span><small>Current streak</small></div>
+                            <div class="gh-stat"><span id="gh-longest">–</span><small>Longest streak</small></div>
+                            <div class="gh-stat"><span id="gh-best">–</span><small id="gh-best-label">Best day</small></div>
+                            <div class="gh-stat"><span id="gh-active">–</span><small>Active days</small></div>
+                            <div class="gh-stat"><span id="gh-repos">–</span><small>Public repos</small></div>
+                            <div class="gh-stat"><span id="gh-followers">–</span><small>Followers</small></div>
+                            <div class="gh-stat"><span id="gh-following">–</span><small>Following</small></div>
+                            <div class="gh-stat"><span id="gh-since">–</span><small>On GitHub since</small></div>
                         </div>
+
+                        <h4 class="gh-heading">Top languages</h4>
+                        <div class="gh-lang-bar" id="gh-lang-bar"></div>
+                        <ul class="gh-lang-list" id="gh-lang-list"></ul>
+
+                        <h4 class="gh-heading">Recently active repositories</h4>
+                        <ul class="gh-repos" id="gh-recent-repos">
+                            <li class="gh-loading">Loading…</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -358,6 +450,16 @@ application creation. I enjoy solving complex problems and learning new technolo
                             </div>
                             <span>VS</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Game Dev -->
+                <div class="skill-category">
+                    <h3>
+                        <i class="fas fa-gamepad"></i>
+                        Game Dev
+                    </h3>
+                    <div class="skill-items">
                         <div class="skill-item">
                             <div class="skill-icon">
                                 <i class="devicon-unity-original"></i>
@@ -376,225 +478,410 @@ application creation. I enjoy solving complex problems and learning new technolo
         </div>
     </section>
     <!-- Section Projets -->
+    <!-- Les cartes avec data-repo="owner/nom" sont complétées automatiquement depuis GitHub (script.js) -->
     <section id="projets" class="projects">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">
                     <i class="fas fa-folder-open"></i>
-                    Completed projects
+                    Projects
                 </h2>
                 <p class="section-description">My most notable projects</p>
             </div>
-            <div class="projects-grid">
-                <!-- Yukais quest for cureness -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <i class="fas fa-folder"></i>
-                            <h3>Yukais quest for cureness</h3>
-                        </div>
-                        <div class="project-status">
-                            <span class="status-public">Public</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        My first game created using Unity 2022.3.9F1. It was my final project for
-                        my CESS diploma at Asty-moulin.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">
-                            <div class="tech-dot csharp"></div>
-                            CSharp
-                        </span>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-stats">
-                            <span><i class="fas fa-star"></i> 7</span>
-                            <span><i class="fas fa-code-branch"></i> 3</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.asty-moulin.be/informatique#programme" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://github.com/VintagixDev/UAA13-YukaisQuestForCureness" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
 
-                </div>
-
-                <!-- Portfolio -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <i class="fas fa-folder"></i>
-                            <h3>Portfolio</h3>
-                        </div>
-                        <div class="project-status">
-                            <span class="status-public">Public</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        This portfolio website template is available on GitHub upon request.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">
-                            <div class="tech-dot html"></div>
-                            Html
-                        </span>
-                        <span class="tech-tag">
-                            <div class="tech-dot css"></div>
-                            CSS
-                        </span>
-                        <span class="tech-tag">
-                            <div class="tech-dot js"></div>
-                            JavaScript
-                        </span>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-stats">
-                            <span><i class="fas fa-star"></i> 3</span>
-                            <span><i class="fas fa-code-branch"></i> 0</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Andras-corda/portfolio" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://github.com/Andras-corda/portfolio" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
+            <div class="project-group">
+                <div class="project-group-header">
+                    <h3 class="project-group-title">
+                        <i class="fas fa-school"></i>
+                        School projects &amp; exams
+                    </h3>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" aria-label="Previous projects">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" aria-label="Next projects">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <!-- Yukais quest for cureness -->
+                        <div class="project-card" data-repo="VintagixDev/UAA13-YukaisQuestForCureness">
+                            <div class="project-thumb">
+                                <i class="fas fa-gamepad"></i>
+                                <img src="./asset/picture/projects/uaa13-yukaisquestforcureness.png" alt="Yukais quest for cureness" loading="lazy"
+                                    onerror="this.remove()">
+                            </div>
+                            <div class="project-header">
+                                <div class="project-title">
+                                    <i class="fas fa-folder"></i>
+                                    <h3>Yukais quest for cureness</h3>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-public">Public</span>
+                                </div>
+                            </div>
+                            <p class="project-description">My first game created using Unity 2022.3.9F1. It was my final project for my CESS diploma at Asty-moulin.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">
+                                    <div class="tech-dot csharp"></div>
+                                    CSharp
+                                </span>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-stats">
+                                    <span title="Stars"><i class="fas fa-star"></i> 3</span>
+                                    <span title="Forks"><i class="fas fa-code-branch"></i> 0</span>
+                                    <span title="Last update" data-updated="2025-07-05T20:34:12Z"><i class="fas fa-clock"></i></span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://www.asty-moulin.be/informatique#programme" class="project-link" title="School program">
+                                        <i class="fas fa-school"></i>
+                                    </a>
+                                    <a href="https://github.com/VintagixDev/UAA13-YukaisQuestForCureness" class="project-link" data-link="github" title="GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- CTOS -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <i class="fas fa-folder"></i>
-                            <h3>CTOS</h3>
+                        <!-- CTOS -->
+                        <div class="project-card" data-repo="R3tr0-andras/ctOS">
+                            <div class="project-thumb">
+                                <i class="fas fa-laptop-code"></i>
+                                <img src="./asset/picture/projects/ctos.png" alt="CTOS" loading="lazy"
+                                    onerror="this.remove()">
+                            </div>
+                            <div class="project-header">
+                                <div class="project-title">
+                                    <i class="fas fa-folder"></i>
+                                    <h3>CTOS</h3>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-public">Public</span>
+                                </div>
+                            </div>
+                            <p class="project-description">End-of-year project for my Multimedia class at Asty-moulin.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">
+                                    <div class="tech-dot php"></div>
+                                    PHP
+                                </span>
+                                <span class="tech-tag">
+                                    <div class="tech-dot css"></div>
+                                    CSS
+                                </span>
+                                <span class="tech-tag">
+                                    <div class="tech-dot js"></div>
+                                    JavaScript
+                                </span>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-stats">
+                                    <span title="Stars"><i class="fas fa-star"></i> 0</span>
+                                    <span title="Forks"><i class="fas fa-code-branch"></i> 0</span>
+                                    <span title="Last update" data-updated="2024-06-03T09:34:17Z"><i class="fas fa-clock"></i></span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://www.asty-moulin.be/informatique#programme" class="project-link" title="School program">
+                                        <i class="fas fa-school"></i>
+                                    </a>
+                                    <a href="https://github.com/R3tr0-andras/ctOS" class="project-link" data-link="github" title="GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-status">
-                            <span class="status-public">Public</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        End-of-year project for my Multimedia class at Asty-moulin.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">
-                            <div class="tech-dot php"></div>
-                            PHP
-                        </span>
-                        <span class="tech-tag">
-                            <div class="tech-dot css"></div>
-                            CSS
-                        </span>
-                        <span class="tech-tag">
-                            <div class="tech-dot js"></div>
-                            JavaScript
-                        </span>
-                        <span class="tech-tag">
-                            <div class="tech-dot mysql"></div>
-                            Mysql
-                        </span>
-                        <span class="tech-tag">
-                            <div class="tech-dot json"></div>
-                            Json
-                        </span>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-stats">
-                            <span><i class="fas fa-star"></i> 6</span>
-                            <span><i class="fas fa-code-branch"></i> 0</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.asty-moulin.be/informatique#programme" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://github.com/R3tr0-andras/ctOS" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- DIM3NSI0N -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <i class="fas fa-folder"></i>
-                            <h3>DIM3NSI0N</h3>
-                        </div>
-                        <div class="project-status">
-                            <span class="status-public">Privé</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        2D video game in Unity with specifications and a roadmap.
-                        (Currently in development at the time of the site's creation)
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">
-                            <div class="tech-dot unity"></div>
-                            Unity
-                        </span>
-                        <span class="tech-tag">
-                            <div class="tech-dot csharp"></div>
-                            CSharp
-                        </span>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-stats">
-                            <span><i class="fas fa-star"></i> 18</span>
-                            <span><i class="fas fa-code-branch"></i> 3</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://docs.google.com/document/d/1SH9q7UJbMkfDXmbHWPMfPyaw5rgaahBnz0xNbuD_j8w/edit?usp=sharing"
-                                class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                            <a href="https://github.com/Andras-corda/DIM3NSION" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
+                        <!-- BlenderHeaj -->
+                        <div class="project-card" data-repo="Andras-corda/blenderHeajWeb">
+                            <div class="project-thumb">
+                                <i class="fas fa-shapes"></i>
+                                <img src="./asset/picture/projects/blenderheajweb.png" alt="BlenderHeaj" loading="lazy"
+                                    onerror="this.remove()">
+                            </div>
+                            <div class="project-header">
+                                <div class="project-title">
+                                    <i class="fas fa-folder"></i>
+                                    <h3>BlenderHeaj</h3>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-public">Public</span>
+                                </div>
+                            </div>
+                            <p class="project-description"></p>
+                            <div class="project-tech">
+                                <span class="tech-tag">
+                                    <div class="tech-dot php"></div>
+                                    PHP
+                                </span>
+                                <span class="tech-tag">
+                                    <div class="tech-dot css"></div>
+                                    CSS
+                                </span>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-stats">
+                                    <span title="Stars"><i class="fas fa-star"></i> 0</span>
+                                    <span title="Forks"><i class="fas fa-code-branch"></i> 0</span>
+                                    <span title="Last update" data-updated="2026-02-23T14:29:54Z"><i class="fas fa-clock"></i></span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Andras-corda/blenderHeajWeb" class="project-link" data-link="github" title="GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Ink Mod -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-title">
-                            <i class="fas fa-folder"></i>
-                            <h3>Ink machine</h3>
+            <div class="project-group">
+                <div class="project-group-header">
+                    <h3 class="project-group-title">
+                        <i class="fas fa-gamepad"></i>
+                        Game jams &amp; side projects
+                    </h3>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" aria-label="Previous projects">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" aria-label="Next projects">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <!-- Watch Dogs gameplay prototype -->
+                        <div class="project-card" data-repo="Andras-corda/watch-dogs-gameplay-prototype">
+                            <div class="project-thumb">
+                                <i class="fas fa-mobile-screen-button"></i>
+                                <img src="./asset/picture/projects/watch-dogs-gameplay-prototype.png" alt="Watch Dogs gameplay prototype" loading="lazy"
+                                    onerror="this.remove()">
+                            </div>
+                            <div class="project-header">
+                                <div class="project-title">
+                                    <i class="fas fa-folder"></i>
+                                    <h3>Watch Dogs gameplay prototype</h3>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-public">Public</span>
+                                </div>
+                            </div>
+                            <p class="project-description"></p>
+                            <div class="project-tech">
+
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-stats">
+                                    <span title="Stars"><i class="fas fa-star"></i> 0</span>
+                                    <span title="Forks"><i class="fas fa-code-branch"></i> 0</span>
+                                    <span title="Last update" data-updated="2026-10-05T18:44:56Z"><i class="fas fa-clock"></i></span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://docs.google.com/document/d/1jwhCZ9XqPkQ7exA6hKsajWX-kQoR8E0srqbDQFgTwd0/edit?usp=sharing" class="project-link" title="Specifications">
+                                        <i class="fas fa-file-lines"></i>
+                                    </a>
+                                    <a href="https://github.com/Andras-corda/watch-dogs-gameplay-prototype" class="project-link" data-link="github" title="GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-status">
-                            <span class="status-public">Privé</span>
+
+                        <!-- Codex -->
+                        <div class="project-card" data-repo="Andras-corda/Codex-devlopment">
+                            <div class="project-thumb">
+                                <i class="fas fa-book"></i>
+                                <img src="./asset/picture/projects/codex-devlopment.png" alt="Codex" loading="lazy"
+                                    onerror="this.remove()">
+                            </div>
+                            <div class="project-header">
+                                <div class="project-title">
+                                    <i class="fas fa-folder"></i>
+                                    <h3>Codex</h3>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-public">Public</span>
+                                </div>
+                            </div>
+                            <p class="project-description"></p>
+                            <div class="project-tech">
+                                <span class="tech-tag">
+                                    <div class="tech-dot html"></div>
+                                    HTML
+                                </span>
+                                <span class="tech-tag">
+                                    <div class="tech-dot css"></div>
+                                    CSS
+                                </span>
+                                <span class="tech-tag">
+                                    <div class="tech-dot js"></div>
+                                    JavaScript
+                                </span>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-stats">
+                                    <span title="Stars"><i class="fas fa-star"></i> 0</span>
+                                    <span title="Forks"><i class="fas fa-code-branch"></i> 0</span>
+                                    <span title="Last update" data-updated="2026-10-04T13:00:21Z"><i class="fas fa-clock"></i></span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Andras-corda/Codex-devlopment" class="project-link" data-link="github" title="GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio -->
+                        <div class="project-card" data-repo="Andras-corda/portfolio-github-hosting">
+                            <div class="project-thumb">
+                                <i class="fas fa-globe"></i>
+                                <img src="./asset/picture/projects/portfolio-github-hosting.png" alt="Portfolio" loading="lazy"
+                                    onerror="this.remove()">
+                            </div>
+                            <div class="project-header">
+                                <div class="project-title">
+                                    <i class="fas fa-folder"></i>
+                                    <h3>Portfolio</h3>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-public">Public</span>
+                                </div>
+                            </div>
+                            <p class="project-description">This portfolio website template is available on GitHub upon request.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">
+                                    <div class="tech-dot html"></div>
+                                    Html
+                                </span>
+                                <span class="tech-tag">
+                                    <div class="tech-dot css"></div>
+                                    CSS
+                                </span>
+                                <span class="tech-tag">
+                                    <div class="tech-dot js"></div>
+                                    JavaScript
+                                </span>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-stats">
+                                    <span title="Stars"><i class="fas fa-star"></i> 0</span>
+                                    <span title="Forks"><i class="fas fa-code-branch"></i> 0</span>
+                                    <span title="Last update" data-updated="2026-04-02T13:56:27Z"><i class="fas fa-clock"></i></span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Andras-corda/portfolio-github-hosting" class="project-link" data-link="github" title="GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <p class="project-description">
-                        A mod for the game Minecraft made in Java and published on Curseforge. (Currently in development
-                        at the time of the site's creation)
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">
-                            <div class="tech-dot java"></div>
-                            Java
-                        </span>
-                        <span class="tech-tag">
-                            <div class="tech-dot json"></div>
-                            Json
-                        </span>
+                </div>
+            </div>
+
+            <div class="project-group">
+                <div class="project-group-header">
+                    <h3 class="project-group-title">
+                        <i class="fas fa-puzzle-piece"></i>
+                        Modding
+                    </h3>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" aria-label="Previous projects">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" aria-label="Next projects">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
-                    <div class="project-footer">
-                        <div class="project-stats">
-                            <span><i class="fas fa-download"></i> 1.1K</span>
+                </div>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <!-- Ink machine -->
+                        <div class="project-card" data-repo="Andras-corda/ink-mod">
+                            <div class="project-thumb">
+                                <i class="fas fa-fill-drip"></i>
+                                <img src="./asset/picture/projects/ink-mod.png" alt="Ink machine" loading="lazy"
+                                    onerror="this.remove()">
+                            </div>
+                            <div class="project-header">
+                                <div class="project-title">
+                                    <i class="fas fa-folder"></i>
+                                    <h3>Ink machine</h3>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-public">Public</span>
+                                </div>
+                            </div>
+                            <p class="project-description">A mod for the game Minecraft made in Java and published on Curseforge. (Currently in development at the time of the site's creation)</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">
+                                    <div class="tech-dot java"></div>
+                                    Java
+                                </span>
+                                <span class="tech-tag">
+                                    <div class="tech-dot json"></div>
+                                    Json
+                                </span>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-stats">
+                                    <span data-keep title="Downloads"><i class="fas fa-download"></i> 1.1K</span>
+                                    <span title="Stars"><i class="fas fa-star"></i> 0</span>
+                                    <span title="Forks"><i class="fas fa-code-branch"></i> 0</span>
+                                    <span title="Last update" data-updated="2026-09-22T18:12:07Z"><i class="fas fa-clock"></i></span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://www.curseforge.com/minecraft/mc-mods/ink-machine" class="project-link" title="CurseForge">
+                                        <iconify-icon icon="simple-icons:curseforge"></iconify-icon>
+                                    </a>
+                                    <a href="https://github.com/Andras-corda/ink-mod" class="project-link" data-link="github" title="GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://www.curseforge.com/minecraft/mc-mods/ink-machine" class="project-link">
-                                <iconify-icon icon="simple-icons:curseforge"></iconify-icon>
-                            </a>
+
+                        <!-- Eagle Vision -->
+                        <div class="project-card" data-repo="Andras-corda/eagle-vision">
+                            <div class="project-thumb">
+                                <i class="fas fa-eye"></i>
+                                <img src="./asset/picture/projects/eagle-vision.png" alt="Eagle Vision" loading="lazy"
+                                    onerror="this.remove()">
+                            </div>
+                            <div class="project-header">
+                                <div class="project-title">
+                                    <i class="fas fa-folder"></i>
+                                    <h3>Eagle Vision</h3>
+                                </div>
+                                <div class="project-status">
+                                    <span class="status-public">Public</span>
+                                </div>
+                            </div>
+                            <p class="project-description"></p>
+                            <div class="project-tech">
+                                <span class="tech-tag">
+                                    <div class="tech-dot java"></div>
+                                    Java
+                                </span>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-stats">
+                                    <span title="Stars"><i class="fas fa-star"></i> 0</span>
+                                    <span title="Forks"><i class="fas fa-code-branch"></i> 0</span>
+                                    <span title="Last update" data-updated="2026-04-02T13:52:01Z"><i class="fas fa-clock"></i></span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Andras-corda/eagle-vision" class="project-link" data-link="github" title="GitHub repository">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
