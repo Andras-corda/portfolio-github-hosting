@@ -1,24 +1,20 @@
-# About me — onglet README.md
+# A lil' more about me
 
-Sous-titre de la section : *A little more about my background and qualifications*
+## 👨‍💻 Developer profile
 
----
+Passionate about IT development since I was 15, I specialize in application creation. I enjoy solving complex problems and learning new technologies.
 
-## 👨‍💻 Full Stack Developer
-
-Passionate about IT development since I was 15, I specialize in
-application creation. I enjoy solving complex problems and learning new technologies.
-
-### 🎯 Current goals
+## 🎯 Current goals
 
 - Contribute to open source projects.
+- Make side projects including Minecraft mods.
 - Improve my skills.
 - Discover new skills.
 - Share my knowledge.
 
-### 📍 Experience
+## 📍 Experience
 
-- 3 years learning various programming languages.
-- 2 years learning database management tools.
-- 1 year learning the Unity game engine.
-- 1 year learning the WPF framework.
+- 3 years learning various programming languages at school and by my own.
+- 2 years learning database management tools at school.
+- 1 year learning the Unity game engine by my own.
+- 1 year learning the WPF framework at school.

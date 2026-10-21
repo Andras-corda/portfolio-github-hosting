@@ -1,24 +1,32 @@
-# BDD — Sauvegarde du contenu du portfolio
+# BDD — Contenu du portfolio
 
-Ce dossier contient une sauvegarde de tout le contenu affiché sur le site.
-Les informations globales (liens, contact, réglages) sont dans [`../json/global.json`](../json/global.json).
+Tout ce qui s'affiche sur le site vient de ce dossier. `index.html` ne contient que la structure de la page.
 
-> Si tu modifies un texte sur le site, pense à le mettre à jour ici aussi (et inversement).
+- **`json/`** → la **configuration** : réglages, liens, icônes, listes, statistiques
+- **`markdown/`** → les **textes**
 
-## Sommaire
+## Configuration (`BDD/json/`)
 
 | Fichier | Contenu |
 |---|---|
-| [site.md](site.md) | Métadonnées, navigation, thèmes, footer |
-| [accueil.md](accueil.md) | Section Accueil (titre, description, boutons, carte de profil) |
-| [about/readme.md](about/readme.md) | Onglet README.md |
-| [about/degrees.md](about/degrees.md) | Onglet Degrees (diplômes) |
-| [about/plan.md](about/plan.md) | Onglet Plan (objectifs) |
-| [about/contribution.md](about/contribution.md) | Onglet Contribution (données GitHub) |
-| [competences.md](competences.md) | Section Languages and Tools |
-| [projets/README.md](projets/README.md) | Index des projets par catégorie |
+| [global.json](../json/global.json) | Site (titre, favicon, footer, fond de l'accueil), identité, compte GitHub, boutons de l'accueil, titres des sections et menu, contact, réseaux, carte |
+| [about.json](../json/about.json) | Onglets de « About me » (ordre, libellé, icône, type, fichier texte) |
+| [skills.json](../json/skills.json) | Catégories et compétences de « Languages and Tools » |
+| [projects.json](../json/projects.json) | Catégories de projets et cartes (dépôt, image, technos, liens, stats de secours, fichier texte) |
+
+## Textes (`BDD/markdown/`)
+
+| Fichier | Affiché dans |
+|---|---|
+| [accueil.md](accueil.md) | Accueil, texte sous le titre |
+| [about/readme.md](about/readme.md) | Onglet README.md (affiché tel quel) |
+| [about/degrees.md](about/degrees.md) | Onglet Degrees : `## Titre`, puis `**période**`, puis le texte |
+| [about/plan.md](about/plan.md) | Onglet Plan : `- [x]` terminé, `- [~]` en cours, `- [ ]` à faire |
+| `projets/<catégorie>/<projet>.md` | Description de chaque carte de projet |
 | [projets/_template.md](projets/_template.md) | Modèle pour ajouter un projet |
-| [contact.md](contact.md) | Section Contact |
+
+Une description de projet vide utilise la description « About » du dépôt GitHub, sinon le début de son README.
+Les commentaires `<!-- … -->` ne sont pas affichés.
 
 ## Arborescence
 
@@ -26,20 +34,17 @@ Les informations globales (liens, contact, réglages) sont dans [`../json/global
 BDD/
 ├── json/
 │   ├── global.json
+│   ├── about.json
+│   ├── skills.json
 │   └── projects.json
 └── markdown/
-    ├── README.md
-    ├── site.md
+    ├── README.md               ← ce fichier (non affiché)
     ├── accueil.md
-    ├── competences.md
-    ├── contact.md
     ├── about/
     │   ├── readme.md
     │   ├── degrees.md
-    │   ├── plan.md
-    │   └── contribution.md
+    │   └── plan.md
     └── projets/
-        ├── README.md
         ├── _template.md
         ├── school-projects-exams/
         │   ├── yukais-quest-for-cureness.md

@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Navigation mobile
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('portfolio:ready', function () {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Smooth scrolling et navigation active
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('portfolio:ready', function () {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -133,17 +133,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Données GitHub réelles (contributions + profil + dépôts)
-document.addEventListener('DOMContentLoaded', function () {
-    const GITHUB_USER = 'Andras-corda';
-    const CACHE_KEY = 'github-data-v1';
-    const CACHE_TTL = 60 * 60 * 1000; // 1h, pour rester sous la limite de 60 requêtes/h de l'API GitHub
+document.addEventListener('portfolio:ready', function () {
+    const config = window.PORTFOLIO.global.github || {};
+    const GITHUB_USER = config.user;
+    const CACHE_KEY = `github-data-v1:${GITHUB_USER}`;
+    // Cache pour rester sous la limite de 60 requêtes/h de l'API GitHub
+    const CACHE_TTL = (config.cacheMinutes || 60) * 60 * 1000;
 
-    const LANGUAGE_COLORS = {
-        'JavaScript': '#f1e05a', 'Java': '#b07219', 'C#': '#178600', 'PHP': '#4F5D95',
-        'HTML': '#e34c26', 'CSS': '#563d7c', 'Python': '#3572A5', 'C++': '#f34b7d',
-        'FreeMarker': '#0050b2', 'TypeScript': '#3178c6', 'ShaderLab': '#222c37',
-        'Hack': '#878787', 'HLSL': '#aace60'
-    };
+    const LANGUAGE_COLORS = window.LANGUAGE_COLORS;
 
     // Dates de secours (snapshot) affichées tout de suite, avant la réponse de l'API
     document.querySelectorAll('[data-updated]').forEach(element => {
@@ -153,7 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
     loadProjectCards();
 
     const graphContainer = document.querySelector('.graph-weeks');
-    if (!graphContainer) return;
+    if (!GITHUB_USER || !graphContainer) return;
+
+    setText('gh-username', `@${GITHUB_USER}`);
+    const profileLink = document.getElementById('gh-profile-link');
+    if (profileLink) profileLink.href = `https://github.com/${GITHUB_USER}`;
 
     loadGitHubData()
         .then(render)
@@ -214,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setText('hero-contribs', total);
         setText('hero-followers', user.followers);
 
-        if (user.bio) setText('profile-bio', user.bio);
+        if (user.bio && config.useGitHubBio) setText('profile-bio', user.bio);
 
         renderLanguages(ownRepos);
         renderRecentRepos(ownRepos);
@@ -486,7 +487,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Animations au scroll
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('portfolio:ready', function () {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -512,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Effet de typing pour le titre
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('portfolio:ready', function () {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
         const text = heroTitle.textContent;
@@ -533,7 +534,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Fond de l'accueil qui suit la souris (parallax)
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('portfolio:ready', function () {
     const hero = document.querySelector('.hero');
     const heroBg = document.querySelector('.hero-bg');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -562,7 +563,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Onglets de la section À propos
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('portfolio:ready', function () {
     const tabs = Array.from(document.querySelectorAll('.about-tab'));
 
     function selectTab(tab) {
@@ -596,7 +597,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Cartes de projets cliquables : le lien GitHub (sinon le premier lien) couvre toute la carte
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('portfolio:ready', function () {
     document.querySelectorAll('.project-card').forEach(card => {
         const link = card.querySelector('.project-links [data-link="github"]')
             || card.querySelector('.project-links a[href*="github.com"]')
@@ -612,7 +613,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Carrousels de projets
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('portfolio:ready', function () {
     document.querySelectorAll('.project-group').forEach(group => {
         const track = group.querySelector('.carousel-track');
         const prev = group.querySelector('.carousel-btn.prev');

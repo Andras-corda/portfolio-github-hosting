@@ -1,37 +1,23 @@
 <!--
-    TEMPLATE DE PROJET
-    1. Copie ce fichier dans le bon dossier :
-         school-projects-exams/ · game-jams-side-projects/ · modding/
-    2. Renomme-le avec le nom du projet en minuscules et tirets (ex. mon-super-jeu.md)
-    3. Remplace tout ce qui est entre < > et supprime les lignes inutiles
-    4. Ajoute le projet dans projets/README.md et dans BDD/json/projects.json
-    5. Ajoute la carte dans index.html (section Projets), avec data-repo="<owner>/<repo>"
-       → les langages, étoiles, forks et la date sont récupérés depuis GitHub automatiquement
+    TEMPLATE DE PROJET — ce fichier contient uniquement la DESCRIPTION du projet.
+
+    1. Copie ce fichier dans le dossier de la catégorie, ex. BDD/markdown/projets/modding/mon-projet.md
+    2. Remplace le texte ci-dessous par ta description
+       (laisse le fichier vide pour utiliser la description « About » du dépôt GitHub, sinon le début de son README)
+    3. Ajoute le projet dans BDD/json/projects.json → "projects" :
+
+    {
+        "title": "Mon projet",
+        "category": "modding",
+        "repo": "mon-pseudo/mon-depot",
+        "icon": "fas fa-gamepad",
+        "image": "./asset/picture/projects/mon-depot.png",
+        "text": "BDD/markdown/projets/modding/mon-projet.md",
+        "tech": ["C#", "Unity"],
+        "stats": { "stars": 0, "forks": 0, "updated": "2026-01-01T00:00:00Z" },
+        "links": [{ "url": "https://example.com", "icon": "fas fa-external-link-alt", "label": "Site" }]
+    }
+
+    Les commentaires comme celui-ci ne sont pas affichés sur le site.
 -->
-
-# <Nom du projet>
-
-| Champ | Valeur |
-|---|---|
-| Image | `asset/picture/projects/<repo-en-minuscules>.png` |
-| Catégorie | <School projects & exams / Game jams & side projects / Modding> |
-| Jeu | <Minecraft… — seulement pour le modding> |
-| Dépôt | [<owner>/<repo>](https://github.com/<owner>/<repo>) |
-| Données | Récupérées depuis GitHub (`data-repo`) |
-| Technologies (GitHub) | <Langage 1>, <Langage 2> |
-| ⭐ Stars | <0> |
-| 🍴 Forks | <0> |
-| 🕒 Dernière mise à jour | <AAAA-MM-JJ> |
-| ⬇️ Téléchargements | <1.2K — seulement si publié sur CurseForge / Modrinth / itch.io…> |
-
-## Description
-
-<Une ou deux phrases qui expliquent le projet.
-Si tu laisses vide, le site utilise la description « About » du dépôt GitHub, sinon le début du README.>
-
-## Liens
-
-- 🐙 GitHub : https://github.com/<owner>/<repo>
-- 🔗 Site : <https://… — homepage ou GitHub Pages, si le projet en a un>
-- 📄 Cahier des charges : <https://… — optionnel>
-- 🧱 CurseForge : <https://… — optionnel>
+Une ou deux phrases qui décrivent le projet.

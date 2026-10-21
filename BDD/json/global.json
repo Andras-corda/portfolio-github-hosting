@@ -1,66 +1,117 @@
 {
-    "owner": {
-        "username": "@R3tr0___",
-        "name": "Andras",
-        "role": "Full-Stack Developer & Multimedia Software",
-        "tagline": "Full Stack Developer passionate about creating web applications, software, and video games. (I also love cats.)",
-        "location": {
-            "city": "Namur",
-            "country": "Belgium"
-        },
-        "status": "Unpaid and tired developer (send help)",
-        "availability": "Mon - Thu, 9h - 18h"
-    },
-
-    "contact": {
-        "email": "andrascorda.switch@gmail.com",
-        "emailCompose": "https://mail.google.com/mail/?view=cm&fs=1&to=andrascorda.switch@gmail.com",
-        "discord": "https://discord.com/users/411170239607472128"
-    },
-
-    "links": {
-        "github": "https://github.com/Andras-corda",
-        "portfolio": "https://andras-corda.github.io/portfolio-github-hosting/",
-        "portfolioRepository": "https://github.com/Andras-corda/portfolio-github-hosting",
-        "codex": "https://andras-corda.github.io/Codex-devlopment/",
-        "curseforge": "https://www.curseforge.com/minecraft/mc-mods/ink-machine",
-        "school": "https://www.asty-moulin.be/informatique#programme"
-    },
-
-    "github": {
-        "user": "Andras-corda",
-        "api": {
-            "user": "https://api.github.com/users/Andras-corda",
-            "repos": "https://api.github.com/users/Andras-corda/repos?per_page=100&sort=pushed",
-            "contributions": "https://github-contributions-api.jogruber.de/v4/Andras-corda?y=last"
-        },
-        "cacheDurationMinutes": 60
-    },
-
     "site": {
         "title": "Home page",
         "lang": "fr",
         "favicon": "./asset/picture/icon-aseprite.png",
-        "profilePicture": "https://github.com/Andras-corda.png",
+        "logo": "Portfolio",
         "heroBackground": null,
-        "themes": ["light", "dark", "system"],
-        "defaultTheme": "system",
-        "font": "Hahmlet",
-        "footer": "© 2025 Portfolio. Designed with ♥ and lots of coffee",
-        "map": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d162492.46675473676!2d4.858418857498627!3d50.479371471599976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sbe!4v1765901038385!5m2!1sfr!2sbe"
+        "footer": "© 2025 Portfolio. Designed with ♥ and lots of coffee"
     },
-
-    "navigation": [
-        { "label": "Accueil", "anchor": "#accueil" },
-        { "label": "À propos", "anchor": "#apropos" },
-        { "label": "Compétences", "anchor": "#competences" },
-        { "label": "Projets", "anchor": "#projets" },
-        { "label": "Contact", "anchor": "#contact" }
-    ],
-
-    "projectCategories": [
-        { "id": "school-projects-exams", "label": "School projects & exams", "icon": "fas fa-school" },
-        { "id": "game-jams-side-projects", "label": "Game jams & side projects", "icon": "fas fa-gamepad" },
-        { "id": "modding", "label": "Modding", "icon": "fas fa-puzzle-piece" }
-    ]
+    "owner": {
+        "username": "@R3tr0___",
+        "name": "Andras",
+        "avatar": null,
+        "bio": "I'm a developer passionate about creating web applications, software, and video games. (I also love cats.)",
+        "location": "Namur, Belgium",
+        "status": "Unpaid and tired developer (send help)"
+    },
+    "github": {
+        "user": "Andras-corda",
+        "useGitHubBio": true,
+        "cacheMinutes": 60
+    },
+    "home": {
+        "greeting": "Hi, I'm",
+        "text": "BDD/markdown/accueil.md",
+        "buttons": [
+            {
+                "label": "See my projects",
+                "href": "#projets",
+                "icon": "fas fa-folder-open",
+                "style": "primary"
+            },
+            {
+                "label": "Contact me",
+                "href": "#contact",
+                "icon": "fas fa-envelope",
+                "style": "secondary"
+            }
+        ]
+    },
+    "sections": {
+        "home": {
+            "id": "accueil",
+            "nav": "Accueil"
+        },
+        "about": {
+            "id": "apropos",
+            "nav": "À propos",
+            "icon": "fas fa-user",
+            "title": "About me",
+            "description": "A little more about my background and qualifications"
+        },
+        "skills": {
+            "id": "competences",
+            "nav": "Compétences",
+            "icon": "fas fa-code",
+            "title": "Languages and Tools",
+            "description": "I use these technologies on a daily basis and have mastered most of them, but I am constantly learning."
+        },
+        "projects": {
+            "id": "projets",
+            "nav": "Projets",
+            "icon": "fas fa-folder-open",
+            "title": "Projects",
+            "description": "My most notable projects"
+        },
+        "contact": {
+            "id": "contact",
+            "nav": "Contact",
+            "icon": "fas fa-envelope",
+            "title": "Contact me",
+            "description": "Please feel free to contact me to discuss your projects."
+        }
+    },
+    "contact": {
+        "items": [
+            {
+                "icon": "fas fa-envelope",
+                "label": "Email",
+                "value": "andrascorda.switch@gmail.com"
+            },
+            {
+                "icon": "fas fa-map-marker-alt",
+                "label": "Localisation",
+                "value": "Namur, Belgique"
+            },
+            {
+                "icon": "fas fa-clock",
+                "label": "Disponibilité",
+                "value": "Mon - Thu, 9h - 18h"
+            }
+        ],
+        "socials": [
+            {
+                "icon": "fab fa-github",
+                "label": "GitHub",
+                "url": "https://github.com/Andras-corda"
+            },
+            {
+                "icon": "fas fa-envelope",
+                "label": "Email",
+                "url": "https://mail.google.com/mail/?view=cm&fs=1&to=andrascorda.switch@gmail.com"
+            },
+            {
+                "icon": "fab fa-discord",
+                "label": "Discord",
+                "url": "https://discord.com/users/411170239607472128"
+            },
+            {
+                "icon": "fas fa-globe",
+                "label": "Website",
+                "url": "https://andras-corda.github.io/portfolio-github-hosting/"
+            }
+        ],
+        "map": "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d162492.46675473676!2d4.858418857498627!3d50.479371471599976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sbe!4v1765901038385!5m2!1sfr!2sbe"
+    }
 }

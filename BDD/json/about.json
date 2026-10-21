@@ -1,0 +1,31 @@
+{
+    "tabs": [
+        {
+            "id": "readme",
+            "label": "README.md",
+            "icon": "fab fa-markdown",
+            "type": "markdown",
+            "file": "BDD/markdown/about/readme.md"
+        },
+        {
+            "id": "degrees",
+            "label": "Degrees",
+            "icon": "fas fa-graduation-cap",
+            "type": "timeline",
+            "file": "BDD/markdown/about/degrees.md"
+        },
+        {
+            "id": "plan",
+            "label": "Plan",
+            "icon": "fas fa-map",
+            "type": "checklist",
+            "file": "BDD/markdown/about/plan.md"
+        },
+        {
+            "id": "contribution",
+            "label": "Contribution",
+            "icon": "fas fa-chart-simple",
+            "type": "github"
+        }
+    ]
+}

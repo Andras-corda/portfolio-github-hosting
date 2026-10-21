@@ -1,0 +1,60 @@
+{
+    "categories": [
+        {
+            "name": "Frontend",
+            "icon": "fas fa-paint-brush",
+            "items": [
+                { "name": "HTML5", "icon": "fab fa-html5" },
+                { "name": "CSS3", "icon": "fab fa-css3-alt" },
+                { "name": "SCSS", "icon": "devicon-sass-original" },
+                { "name": "JavaScript", "icon": "fab fa-js" }
+            ]
+        },
+        {
+            "name": "Backend",
+            "icon": "fas fa-server",
+            "items": [
+                { "name": "Node.js", "icon": "fab fa-node-js" },
+                { "name": "Php8", "icon": "fab fa-php" },
+                { "name": "Python", "icon": "fab fa-python" },
+                { "name": "MySql", "icon": "fas fa-database" }
+            ]
+        },
+        {
+            "name": "Software & Application",
+            "icon": "fas fa-code",
+            "items": [
+                { "name": "CSharp", "icon": "devicon-csharp-plain" },
+                { "name": "C++", "icon": "devicon-cplusplus-plain" },
+                { "name": "Python", "icon": "fab fa-python" },
+                { "name": "Java", "icon": "fab fa-java" }
+            ]
+        },
+        {
+            "name": "FrameWork",
+            "icon": "devicon-dot-net-plain",
+            "items": [
+                { "name": ".Net", "icon": "devicon-dot-net-plain" },
+                { "name": "WPF", "icon": "fas fa-desktop" },
+                { "name": "Electron", "icon": "fab fa-js" }
+            ]
+        },
+        {
+            "name": "Tools",
+            "icon": "fas fa-tools",
+            "items": [
+                { "name": "GitHub", "icon": "fab fa-github" },
+                { "name": "VSC", "icon": "devicon-vscode-plain" },
+                { "name": "VS", "icon": "devicon-visualstudio-plain" }
+            ]
+        },
+        {
+            "name": "Game Dev",
+            "icon": "fas fa-gamepad",
+            "items": [
+                { "name": "Unity", "icon": "devicon-unity-original" },
+                { "name": "UnrealEngine5", "icon": "devicon-unrealengine-plain" }
+            ]
+        }
+    ]
+}
